@@ -164,7 +164,7 @@ self.__precacheManifest = [
     "url": "/react-cui/static/js/39.7771d7a6.chunk.js"
   },
   {
-    "revision": "df48c4e6a5739c55d32df3d2bccebc66",
+    "revision": "ffd978c05f7697f608df96c3392b50be",
     "url": "/react-cui/index.html"
   }
 ];
