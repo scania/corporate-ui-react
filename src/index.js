@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, NavLink, Switch, BrowserRouter as Router } from 'react-router-dom'
 
+import data from '../package.json';
 import './index.css';
 
 import Home from './components/Home/Home';
@@ -22,7 +23,7 @@ const items = [
 ]
 
 const App = (
-  <Router>
+  <Router basename={data.name}>
     <c-theme name="scania"></c-theme>
     <c-header site-name="App">
       <NavLink to="/global" slot="items">global</NavLink>
