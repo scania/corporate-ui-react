@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/react-cui/static/js/20.d24f2bf7.chunk.js"
   },
   {
-    "revision": "e4f2758ef15d8b9ca4d8",
+    "revision": "2fbd07ba05cc48954080",
     "url": "/react-cui/static/css/main.14967729.chunk.css"
   },
   {
@@ -84,8 +84,8 @@ self.__precacheManifest = [
     "url": "/react-cui/static/js/19.9e891fa6.chunk.js"
   },
   {
-    "revision": "e4f2758ef15d8b9ca4d8",
-    "url": "/react-cui/static/js/main.acebf7b3.chunk.js"
+    "revision": "2fbd07ba05cc48954080",
+    "url": "/react-cui/static/js/main.0f22b52a.chunk.js"
   },
   {
     "revision": "196434d993ef4eb0964c",
@@ -164,7 +164,7 @@ self.__precacheManifest = [
     "url": "/react-cui/static/js/39.d8e6c0db.chunk.js"
   },
   {
-    "revision": "b74d562338cb895fdf2b9f9c8b4107cb",
+    "revision": "943aaa2e1a646166369b91f1bce84e20",
     "url": "/react-cui/index.html"
   }
 ];
