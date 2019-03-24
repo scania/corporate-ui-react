@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/react-cui/static/css/main.14967729.chunk.css"
   },
   {
-    "revision": "ce16aceb402c6c3adab6",
-    "url": "/react-cui/static/js/runtime~main.731b2184.js"
+    "revision": "097018fadece3963577f",
+    "url": "/react-cui/static/js/runtime~main.ac531834.js"
   },
   {
     "revision": "982487ace4a22b8b3044",
@@ -32,12 +32,12 @@ self.__precacheManifest = [
     "url": "/react-cui/static/js/6.5da55731.chunk.js"
   },
   {
-    "revision": "1197aa3cd7b70b38634d",
-    "url": "/react-cui/static/js/7.9bc59209.chunk.js"
+    "revision": "1de033b9db66545c7167",
+    "url": "/react-cui/static/js/7.deb07f7c.chunk.js"
   },
   {
-    "revision": "e1e36856d7259f09ff60",
-    "url": "/react-cui/static/js/8.d65615b3.chunk.js"
+    "revision": "1a62400152428c631f7c",
+    "url": "/react-cui/static/js/8.478b5f38.chunk.js"
   },
   {
     "revision": "56934333efb15616078b",
@@ -48,12 +48,12 @@ self.__precacheManifest = [
     "url": "/react-cui/static/js/10.a3d32fe7.chunk.js"
   },
   {
-    "revision": "7257b68d19ab9d5f683e",
-    "url": "/react-cui/static/js/11.9a7adf40.chunk.js"
+    "revision": "d3f308f4a8ea4006a98c",
+    "url": "/react-cui/static/js/11.299b6484.chunk.js"
   },
   {
-    "revision": "a68b50beeb7155b5c6b2",
-    "url": "/react-cui/static/js/12.ae5f12dd.chunk.js"
+    "revision": "94985b231491135a51db",
+    "url": "/react-cui/static/js/12.686167f4.chunk.js"
   },
   {
     "revision": "196d4f587c367cc23c74",
@@ -164,7 +164,7 @@ self.__precacheManifest = [
     "url": "/react-cui/static/js/39.c868e50f.chunk.js"
   },
   {
-    "revision": "2e31bf09c4de1f12ce0068cb18a16f83",
+    "revision": "1ca3ef57b9a3526642e31df14b9e2f73",
     "url": "/react-cui/index.html"
   }
 ];
