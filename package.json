@@ -4,12 +4,15 @@
   "private": true,
   "homepage": "https://awinny.github.io/react-cui",
   "dependencies": {
-    "Corporate-UI": "file:../corporate-ui-dev/Corporate-UI-0.1.0.tgz",
+    "Corporate-UI": "file:../corporate-ui-dev/Corporate-UI-0.1.1.tgz",
+    "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
+    "node-sass": "^4.11.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "reactstrap": "^7.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,6 +30,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {}
+  ]
 }

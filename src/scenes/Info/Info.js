@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
 
-import './info.css';
+import './Info.scss';
 
 const List = () => (
   <ul>

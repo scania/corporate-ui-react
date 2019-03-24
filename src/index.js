@@ -1,22 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, NavLink, Switch, BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import data from '../package.json';
-import './index.css';
+import './index.scss';
 
-import Home from './components/Home/Home';
-import Info from './components/Info/Info';
-import Contact from './components/Contact/Contact';
-import Error from './components/Error/Error';
+// Scenes
+import Header from './components/Header/Header';
+import Content from './components/Content/Content';
+import Footer from './components/Footer/Footer';
+
+// Components
+import Home from './scenes/Home/Home';
+import Info from './scenes/Info/Info';
+import Contact from './scenes/Contact/Contact';
 
 import * as serviceWorker from './serviceWorker';
 
 import { defineCustomElements } from 'Corporate-UI/dist/collection/helpers';
 
-defineCustomElements(['c-header', 'c-navigation', 'c-content', 'c-footer', 'c-container', 'c-theme']);
+defineCustomElements(['c-container', 'c-theme']);
 
-const items = [
+const ITEMS = [
   { name: 'Home', url: '/', ctrl: Home, attrs: { exact: true } },
   { name: 'Info', url: '/info', ctrl: Info },
   { name: 'Contact', url: '/contact', ctrl: Contact }
@@ -25,25 +30,13 @@ const items = [
 const App = (
   <Router basename={data.name}>
     <c-theme name="scania"></c-theme>
-    <c-header site-name="App">
-      <NavLink to="/global" slot="items">global</NavLink>
-      <c-navigation slot="navigation">
-        {items.map((item, key) => <NavLink activeClassName="active" to={item.url} key={key} slot="primary-items" {...item.attrs} >{item.name}</NavLink> )}
-      </c-navigation>
-    </c-header>
-    <c-content>
-      <Switch>
-        {items.map((item, key) => <Route path={item.url} component={item.ctrl} key={key} {...item.attrs} /> )}
-        <Route component={Error} />
-      </Switch>
-    </c-content>
-    <c-footer>
-      <NavLink to="/contact" slot="items">Contact</NavLink>
-    </c-footer>
+    <Header items={ITEMS} />
+    <Content items={ITEMS} />
+    <Footer />
   </Router>
 )
 
-ReactDOM.render(App, document.getElementById('root'));
+ReactDOM.render(App, document.body);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
