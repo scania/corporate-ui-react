@@ -1,5 +1,5 @@
 {
-  "name": "react-app",
+  "name": "react-cui",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://awinny.github.io/react-cui",
@@ -20,7 +20,7 @@
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-cui"
   },
   "browserslist": [
     ">0.2%",
