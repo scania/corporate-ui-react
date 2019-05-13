@@ -17,7 +17,7 @@ import Contact from './scenes/Contact/Contact';
 
 import * as serviceWorker from './serviceWorker';
 
-import { defineCustomElements } from 'Corporate-UI/dist/collection/helpers';
+import { defineCustomElements } from 'corporate-ui-dev/dist/define';
 
 defineCustomElements(['c-container', 'c-theme']);
 

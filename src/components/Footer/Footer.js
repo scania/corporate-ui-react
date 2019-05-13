@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { defineCustomElements } from 'Corporate-UI/dist/collection/helpers';
+import { defineCustomElements } from 'corporate-ui-dev/dist/define';
 
 defineCustomElements(['c-footer']);
 

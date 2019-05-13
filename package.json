@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "https://awinny.github.io/react-cui",
   "dependencies": {
-    "Corporate-UI": "file:../corporate-ui-dev/Corporate-UI-0.1.1.tgz",
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
@@ -30,5 +29,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "corporate-ui-dev": "^4.0.0-alpha.1"
+  }
 }
