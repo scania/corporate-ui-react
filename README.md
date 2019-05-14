@@ -7,15 +7,15 @@
 2. Run `npm i` to install package dependencies
 3. Runs `npm start`. 
 
-⋅⋅⋅The app will run in the development mode.<br>
-⋅⋅⋅Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  The app will run in the development mode.<br>
+  Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 4. `npm run build`
 
-⋅⋅⋅Builds the app for production to the `build` folder.<br>
-⋅⋅⋅It correctly bundles React in production mode and optimizes the build for the best performance.
-⋅⋅⋅The build is minified and the filenames include the hashes.<br>
-⋅⋅⋅Your app is ready to be deployed!
+  Builds the app for production to the `build` folder.<br>
+  It correctly bundles React in production mode and optimizes the build for the best performance.
+  The build is minified and the filenames include the hashes.<br>
+  Your app is ready to be deployed!
 
 
 ## Setup Corporate UI in React Application
