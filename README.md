@@ -23,7 +23,9 @@
 To include Corporate UI components in React application, follow these steps:
 
 1. From the command line, install `corporate-ui-dev` package from NPM. In the project folder, run `npm i corporate-ui-dev` from the command line.
-2. Import `defineCustomElements` from corporate-ui-dev package, and call `defineCustomElements(['component_name'])` inside `index.js` or in any React component that will use Corporate UI components. The code below will load `c-theme, c-footer, and c-header`. For all available components, check [this link](https://static.scania.com/build/global/4.0.0-alpha.1/www/index.html). To import all components, pass an 'all' string instead: `defineCustomElements('all')`.
+2. Import `defineCustomElements` from corporate-ui-dev package, and call `defineCustomElements(['component_name'])` inside `index.js` or in any React component that will use Corporate UI components. 
+
+   The code below will load `c-theme, c-footer, and c-header`. For all available components, check [this link](https://static.scania.com/build/global/4.0.0-alpha.1/www/index.html). To import all components, pass an 'all' string instead: `defineCustomElements('all')`.
 
 Below is the example code in `index.js`
 
