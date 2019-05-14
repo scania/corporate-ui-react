@@ -1,25 +1,5 @@
 # Corporate UI in React application
 
-
-## How to run this project
-
-1. Clone the project
-2. Run `npm i` to install package dependencies
-3. Run `npm start`. 
-
-   The app will run in the development mode.<br>
-   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-4. `npm run build`
-
-   Builds the app for production to the `build` folder.<br>
-   It correctly bundles React in production mode and optimizes the build for the best performance.
-   The build is minified and the filenames include the hashes.<br>
-   Your app is ready to be deployed!
-
-
-## Setup Corporate UI in React Application
-
 To include Corporate UI components in React application, follow these steps:
 
 1. From the command line, install `corporate-ui-dev` package from NPM. In the project folder, run `npm i corporate-ui-dev` from the command line.
@@ -78,3 +58,25 @@ To use Scania styling on a project application, add Scania theme using the `c-th
 `<c-theme name="Scania" global="true"></c-theme>`
 
 If the `global` attribute set to true, it will add bootstrap 4 styling classes & javascript.
+
+
+## Live example
+
+See the running example on [this link](https://helloimela.github.io/react-cui/).
+
+
+## How to run this project
+
+1. Clone the project
+2. Run `npm i` to install package dependencies
+3. Run `npm start`. 
+
+   The app will run in the development mode.<br>
+   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+4. `npm run build`
+
+   Builds the app for production to the `build` folder.<br>
+   It correctly bundles React in production mode and optimizes the build for the best performance.
+   The build is minified and the filenames include the hashes.<br>
+   Your app is ready to be deployed!
