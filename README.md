@@ -5,7 +5,7 @@
 
 1. Clone the project
 2. Run `npm i` to install package dependencies
-3. Runs `npm start`. 
+3. Run `npm start`. 
 
    The app will run in the development mode.<br>
    Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
