@@ -62,7 +62,7 @@ If the `global` attribute set to true, it will add bootstrap 4 styling classes &
 
 ## Live example
 
-See the running example on [this link](https://helloimela.github.io/react-cui/).
+See the running example on [this link](https://scania.github.io/corporate-ui-react/).
 
 
 ## How to run this project
