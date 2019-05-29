@@ -29,7 +29,7 @@ const ITEMS = [
 
 const App = (
   <Router basename={data.name}>
-    <c-theme name="scania"></c-theme>
+    <c-theme name="scania" global="true"></c-theme>
     <Header items={ITEMS} />
     <Content items={ITEMS} />
     <Footer />
