@@ -1,8 +1,8 @@
 {
-  "name": "react-cui",
+  "name": "corporate-ui-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://awinny.github.io/react-cui",
+  "homepage": "https://scania.github.io/corporate-ui-react",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
