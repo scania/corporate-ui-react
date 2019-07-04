@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Error from '../../scenes/Error/Error';
 
-import { defineCustomElements } from 'corporate-ui-dev/dist/define';
+import { defineCustomElements } from 'corporate-ui-dev/dist';
 
 defineCustomElements(['c-content']);
 

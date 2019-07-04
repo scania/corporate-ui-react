@@ -31,6 +31,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "corporate-ui-dev": "^4.0.0-alpha.2"
+    "corporate-ui-dev": "^4.0.0-alpha.3",
+    "scania-theme": "^1.0.0-alpha.9"
   }
 }

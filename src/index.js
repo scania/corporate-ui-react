@@ -17,9 +17,11 @@ import Contact from './scenes/Contact/Contact';
 
 import * as serviceWorker from './serviceWorker';
 
-import { defineCustomElements } from 'corporate-ui-dev/dist/define';
+import { defineCustomElements, addTheme } from 'corporate-ui-dev/dist';
+import { theme as scania } from 'scania-theme';
 
 defineCustomElements(['c-container', 'c-theme']);
+addTheme(scania);
 
 const ITEMS = [
   { name: 'Home', url: '/', ctrl: Home, attrs: { exact: true } },

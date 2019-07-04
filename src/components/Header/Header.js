@@ -10,7 +10,7 @@ import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from
 
 import './Header.scss';
 
-import { defineCustomElements } from 'corporate-ui-dev/dist/define';
+import { defineCustomElements } from 'corporate-ui-dev/dist';
 
 defineCustomElements(['c-header', 'c-navigation']);
 

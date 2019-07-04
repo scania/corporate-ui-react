@@ -53,11 +53,26 @@ ReactDOM.render(App, document.body);
 
 ## Styling
 
-To use Scania styling on a project application, add Scania theme using the `c-theme` component. Add the code below in the React component template:
+To use Scania styling on a project application, import scania-theme package and add Scania theme using the `c-theme` component. 
 
-`<c-theme name="Scania" global="true"></c-theme>`
+1. Install scania-theme package
 
-If the `global` attribute set to true, it will add bootstrap 4 styling classes & javascript.
+   `npm i scania-theme@beta`
+
+2. Import `theme` in the project and use it with `addTheme` function from corporate-ui.
+
+   ```js
+   import { addTheme } from 'corporate-ui-dev/dist/'; 
+   import { theme as scania } from 'scania-theme'; 
+
+   addTheme(scania);
+   ```
+
+3. Add the code below in the React component template :
+
+   `<c-theme name="scania" global="true"></c-theme>`
+
+   If the `global` attribute set to true, it will add bootstrap 4 styling classes & javascript.
 
 
 ## Live example
