@@ -26,7 +26,12 @@ addTheme(scania);
 const ITEMS = [
   { name: 'Home', url: '/', ctrl: Home, attrs: { exact: true } },
   { name: 'Info', url: '/info', ctrl: Info },
-  { name: 'Contact', url: '/contact', ctrl: Contact }
+  { name: 'Contact', url: '/contact', ctrl: Contact ,
+    children: [
+      { name: 'about', url:'about', ctrl: Contact },
+      { name: 'profile', url:'profile', ctrl: Contact }
+    ]
+  }
 ]
 
 const App = (

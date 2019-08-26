@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Switch, Route } from 'react-router-dom';
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 // import 'bootstrap/scss/functions.scss';
@@ -14,6 +14,27 @@ import { defineCustomElements } from 'corporate-ui-dev/dist';
 
 defineCustomElements(['c-header', 'c-navigation']);
 
+const Subnav = (props) => {
+  console.log(props);
+  if(props.children) {
+    return  (
+      <c-navigation slot="sub" active>
+      { props.children.map((child, key) => 
+        <NavLink 
+          activeClassName="active" 
+          to={props.match.url + '/' + child.url}
+          key={key} 
+          slot="primary-items" {...child.attrs}
+          >{child.name}
+        </NavLink> ) }
+      </c-navigation>
+    )
+    
+  } else {
+    return '';
+  }
+}
+
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +45,10 @@ class Header extends Component {
     };
   }
 
+  subnavActive() {
+    return true;
+  }
+
   toggle() {
     this.setState(prevState => ({
       dropdownOpen: !prevState.dropdownOpen
@@ -31,24 +56,42 @@ class Header extends Component {
   }
 
   render() {
-    return (
+    return [
       <c-header site-name="App">
         <NavLink to="/global" slot="items">global</NavLink>
-        <c-navigation slot="navigation">
-          {this.props.items.map((item, key) => <NavLink activeClassName="active" to={item.url} key={key} slot="primary-items" {...item.attrs} >{item.name}</NavLink> )}
+      </c-header>,
+      <c-navigation>
+      {this.props.items.map((item, key) => 
+        <NavLink 
+          activeClassName="active" 
+          to={item.url}
+          key={key} 
+          slot="primary-items" {...item.attrs}
+          >{item.name}
+        </NavLink> 
+      )}
 
-          <UncontrolledDropdown setActiveFromChild slot="secondary-items">
-            <DropdownToggle tag="a" className="nav-item nav-link" caret>
-              User
-            </DropdownToggle>
-            <DropdownMenu right={true}>
-              <DropdownItem tag={NavLink} to="/user/profile">Profile</DropdownItem>
-              <DropdownItem tag={NavLink} to="/user/settings">Settings</DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
-        </c-navigation>
-      </c-header>
-    );
+      <UncontrolledDropdown setActiveFromChild slot="secondary-items">
+        <DropdownToggle tag="a" className="nav-item nav-link" caret>
+          User
+        </DropdownToggle>
+        <DropdownMenu right={true}>
+          <DropdownItem tag={NavLink} to="/user/profile">Profile</DropdownItem>
+          <DropdownItem tag={NavLink} to="/user/settings">Settings</DropdownItem>
+        </DropdownMenu>
+      </UncontrolledDropdown>
+      
+      <Switch>
+        {this.props.items.map((item, key) => (
+          <Route exact
+            path={item.url}
+            render= {(props) => <Subnav {...props} children = { item.children }/>}
+            key={key}
+          />
+        ))}
+      </Switch>
+    </c-navigation>
+    ];
   }
 }
 
