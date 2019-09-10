@@ -1,66 +1,71 @@
 import React, { Component } from 'react';
-import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import './Info.scss';
 
-const List = () => (
-  <ul>
-    <li>First</li>
-    <li>Second</li>
-    <li>Third</li>
-  </ul>
-)
-const Table = () => (
-  <table>
-    <thead>
-      <tr>
-        <th>id</th><th>name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>1</th><th>andreas</th>
-      </tr>
-      <tr>
-        <th>2</th><th>jesper</th>
-      </tr>
-    </tbody>
-  </table>
-)
-const Form = () => (
-  <form>
-    <fieldset>
-      <legend>Name</legend>
-      <label>First</label>
-      <input type="text" name="fname" />
-      <label>Last</label>
-      <input type="text" name="lname" />
-    </fieldset>
-  </form>
-)
-
-const items = [
-  { name: 'Tab 1', url: 'list', ctrl: List },
-  { name: 'Tab 2', url: 'table', ctrl: Table },
-  { name: 'Tab 3', url: 'form', ctrl: Form }
-]
+function DetailInfo( {match} ) {
+  switch(match.path) {
+    default: return (
+      <ul className="list-group">
+        <li className="list-group-item">First</li>
+        <li className="list-group-item">Second</li>
+        <li className="list-group-item">Third</li>
+      </ul>
+    );
+    case '/info/form': return (
+      <form>
+        <div className="form-group">
+          <label htmlFor="exampleInputEmail1">Email address</label>
+          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+        </div>
+        <div className="form-group">
+          <label htmlFor="exampleInputPassword1">Password</label>
+          <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+        </div>
+        <button type="submit" className="btn btn-primary">Submit</button>
+      </form>
+    );
+    case '/info/table': return (
+      <table className="table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td><td>Thomas</td>
+          </tr>
+          <tr>
+            <td>2</td><td>Cook</td>
+          </tr>
+          <tr>
+            <td>3</td><td>James</td>
+          </tr>
+          <tr>
+            <td>4</td><td>Bay</td>
+          </tr>
+        </tbody>
+      </table>
+    );
+  }
+}
 
 class Info extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <section>
         <c-container type="fluid">
           <h1>Info</h1>
-          <div className="tabs">
-            <nav className="tab-header">
-              {items.map((item, key) => <NavLink activeClassName="active" to={'/info/' + item.url} key={key}>{item.name}</NavLink> )}
-            </nav>
-            <div className="tab-body">
-              <Switch>
-                {items.map((item, key) => <Route path={'/info/' + item.url} component={item.ctrl} key={key} /> )}
-                <Redirect from="/info" to="/info/list" />
-              </Switch>
-            </div>
+          <h4>{this.props.match.params.id}</h4>
+          <div className="col-md-4">
+            <Switch>
+              <Route path={'/info/'+this.props.match.params.id} component={DetailInfo} />
+              <Redirect from="/info" to="/info/list" />
+            </Switch>
           </div>
         </c-container>
       </section>

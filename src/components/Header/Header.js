@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { NavLink, Switch, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import Content from '../Content/Content'
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import data from './../../../package.json';
 
 // import 'bootstrap/scss/functions.scss';
 // import 'bootstrap/scss/variables.scss';
@@ -15,14 +17,13 @@ import { defineCustomElements } from 'corporate-ui-dev/dist';
 defineCustomElements(['c-header', 'c-navigation']);
 
 const Subnav = (props) => {
-  console.log(props);
-  if(props.children) {
+  if(props.item && props.item.children) {
     return  (
-      <c-navigation slot="sub" active>
-      { props.children.map((child, key) => 
+      <c-navigation slot="sub" active target={'/' + data.name + props.item.url} expand="true">
+      { props.item.children.map((child, key) => 
         <NavLink 
           activeClassName="active" 
-          to={props.match.url + '/' + child.url}
+          to={props.item.url + child.url}
           key={key} 
           slot="primary-items" {...child.attrs}
           >{child.name}
@@ -41,12 +42,13 @@ class Header extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
+      active: {},
       dropdownOpen: false
     };
   }
 
-  subnavActive() {
-    return true;
+  setActive(item) {
+    this.setState({ active: item });
   }
 
   toggle() {
@@ -66,7 +68,9 @@ class Header extends Component {
           activeClassName="active" 
           to={item.url}
           key={key} 
+          className={item.children ? 'parent' : ''}
           slot="primary-items" {...item.attrs}
+          onClick={() => this.setActive(item)}
           >{item.name}
         </NavLink> 
       )}
@@ -80,16 +84,8 @@ class Header extends Component {
           <DropdownItem tag={NavLink} to="/user/settings">Settings</DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
-      
-      <Switch>
-        {this.props.items.map((item, key) => (
-          <Route exact
-            path={item.url}
-            render= {(props) => <Subnav {...props} children = { item.children }/>}
-            key={key}
-          />
-        ))}
-      </Switch>
+
+      <Subnav item={ this.state.active } ctrl={Content}/>
     </c-navigation>
     ];
   }

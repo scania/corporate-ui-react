@@ -12,7 +12,11 @@ class Content extends Component {
     return (
       <c-content>
         <Switch>
-          {this.props.items.map((item, key) => <Route path={item.url} component={item.ctrl} key={key} {...item.attrs} /> )}
+          {this.props.items.map((item, key) => [
+              <Route exact path={item.url} component={item.ctrl} key={key} {...item.attrs}/>,
+              <Route path={item.url +'/:id'} component={item.ctrl} key={key} /> 
+            ]
+          )}
           <Route component={Error} />
         </Switch>
       </c-content>
