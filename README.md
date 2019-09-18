@@ -18,7 +18,7 @@ import * as serviceWorker from './serviceWorker';
 
 import Home from './scenes/Home/Home';
 
-import { defineCustomElements } from 'corporate-ui-dev/dist/define';
+import { defineCustomElements } from 'corporate-ui-dev/dist';
 
 defineCustomElements(['c-theme','c-header','c-footer']);
 // to import all components pass an 'all' value
