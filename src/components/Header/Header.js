@@ -4,12 +4,6 @@ import Content from '../Content/Content'
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import data from './../../../package.json';
 
-// import 'bootstrap/scss/functions.scss';
-// import 'bootstrap/scss/variables.scss';
-// import 'bootstrap/scss/mixins.scss';
-
-// import 'bootstrap/scss/_dropdown.scss';
-
 import './Header.scss';
 
 import { defineCustomElements } from 'corporate-ui-dev/dist';
@@ -22,10 +16,10 @@ const Subnav = (props) => {
       <c-navigation slot="sub" active target={'/' + data.name + props.item.url} expand="true">
       { props.item.children.map((child, key) => 
         <NavLink 
-          activeClassName="active" 
+          activeClassName="active"
           to={props.item.url + child.url}
           key={key} 
-          slot="primary-items" {...child.attrs}
+          slot= {child.type + '-items'}
           >{child.name}
         </NavLink> ) }
       </c-navigation>
@@ -39,8 +33,8 @@ const Subnav = (props) => {
 class Header extends Component {
   constructor(props) {
     super(props);
-
     this.toggle = this.toggle.bind(this);
+    this.onLoadActive = {};
     this.state = {
       active: {},
       dropdownOpen: false
@@ -56,6 +50,20 @@ class Header extends Component {
       dropdownOpen: !prevState.dropdownOpen
     }));
   }
+  
+  matchUrl = (match, location) => {
+    const activeSegment = location.pathname.match(/^\/+\w*/gm);
+    if(match) {
+      this.onLoadActive = this.props.items.find(item => {
+        return item.url === activeSegment[0];
+      })
+    }
+    return match;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.active !== this.onLoadActive) this.setActive(this.onLoadActive)
+  }
 
   render() {
     return [
@@ -65,12 +73,13 @@ class Header extends Component {
       <c-navigation>
       {this.props.items.map((item, key) => 
         <NavLink 
-          activeClassName="active" 
+          activeClassName="active"
           to={item.url}
           key={key} 
           className={item.children ? 'parent' : ''}
-          slot="primary-items" {...item.attrs}
+          slot= {item.type + '-items'} {...item.attrs}
           onClick={() => this.setActive(item)}
+          isActive={this.matchUrl}
           >{item.name}
         </NavLink> 
       )}

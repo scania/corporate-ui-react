@@ -58,7 +58,7 @@ class Info extends Component {
   render() {
     return (
       <section>
-        <c-container type="fluid">
+        <div className="container-fluid">
           <h1>Info</h1>
           <h4>{this.props.match.params.id}</h4>
           <div className="col-md-4">
@@ -67,7 +67,7 @@ class Info extends Component {
               <Redirect from="/info" to="/info/list" />
             </Switch>
           </div>
-        </c-container>
+        </div>
       </section>
     );
   }

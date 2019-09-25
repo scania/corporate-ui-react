@@ -32,22 +32,17 @@ class App extends Component {
   componentDidMount() {
     this.setState({
       ITEMS: [
-        { name: 'Home', url: '/', ctrl: Home, attrs: { exact: true } },
+        { name: 'Home', url: '/', ctrl: Home, attrs: { exact: true }, type : 'primary' },
         { 
-          name: 'Info', url: '/info', ctrl: Info,
+          name: 'Info', url: '/info', ctrl: Info, type : 'primary',
           children: [
-            { name: 'List', url:'/list', ctrl: Info },
-            { name: 'Table', url:'/table', ctrl: Info },
-            { name: 'Form', url:'/form', ctrl: Info }
+            { name: 'List', url:'/list', ctrl: Info, type : 'primary' },
+            { name: 'Table', url:'/table', ctrl: Info, type : 'primary' },
+            { name: 'Form', url:'/form', ctrl: Info, type : 'primary' }
           ]
         },
-        { 
-          name: 'Contact', url: '/contact', ctrl: Contact,
-          children: [
-            { name: 'About', url:'/about', ctrl: Contact },
-            { name: 'Profile', url:'/profile', ctrl: Contact }
-          ]
-        }
+        { name: 'Contact', url: '/contact', ctrl: Contact, type : 'primary'},
+        { name: 'More', url: '/more', type : 'secondary' },
       ]
     })
   }

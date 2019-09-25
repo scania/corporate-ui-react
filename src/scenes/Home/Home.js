@@ -4,10 +4,10 @@ class Home extends Component {
   render() {
     return (
       <section>
-        <c-container type="fluid">
+        <div className="container-fluid">
           <h1>Home</h1>
           <p>Some text goes here.</p>
-        </c-container>
+        </div>
       </section>
     );
   }
