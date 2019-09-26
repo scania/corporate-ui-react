@@ -1,6 +1,6 @@
 # Corporate UI in a React application
 
-## Run project locally
+## Getting started
 
 1. Clone the project
 2. Run `npm i` to install package dependencies
@@ -17,7 +17,7 @@
    Your app is ready to be deployed!
    
    
-## Getting started
+## Project setup
 
 To include Corporate UI components in React application, follow these steps:
 
