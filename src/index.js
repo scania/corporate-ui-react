@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -13,32 +13,50 @@ import Footer from './components/Footer/Footer';
 // Components
 import Home from './scenes/Home/Home';
 import Info from './scenes/Info/Info';
-import Contact from './scenes/Contact/Contact';
 
 import * as serviceWorker from './serviceWorker';
 
-import { defineCustomElements, addTheme } from 'corporate-ui-dev/dist';
+import { defineCustomElements, addTheme } from 'corporate-ui-dev';
 import { theme as scania } from 'scania-theme';
 
 defineCustomElements(['c-container', 'c-theme']);
 addTheme(scania);
 
-const ITEMS = [
-  { name: 'Home', url: '/', ctrl: Home, attrs: { exact: true } },
-  { name: 'Info', url: '/info', ctrl: Info },
-  { name: 'Contact', url: '/contact', ctrl: Contact }
-]
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {ITEMS:[]}
+  }
 
-const App = (
-  <Router basename={data.name}>
-    <c-theme name="scania" global="true"></c-theme>
-    <Header items={ITEMS} />
-    <Content items={ITEMS} />
-    <Footer />
-  </Router>
-)
+  componentDidMount() {
+    this.setState({
+      ITEMS: [
+        { name: 'Home', url: '/', ctrl: Home, attrs: { exact: true }, type : 'primary' },
+        { 
+          name: 'Info', url: '/info', ctrl: Info, type : 'primary',
+          children: [
+            { name: 'List', url:'/list', ctrl: Info, type : 'primary' },
+            { name: 'Table', url:'/table', ctrl: Info, type : 'primary' },
+            { name: 'Form', url:'/form', ctrl: Info, type : 'primary' }
+          ]
+        },
+      ]
+    })
+  }
 
-ReactDOM.render(App, document.body);
+  render () {
+    return (
+    <Router basename={data.name}>
+      <c-theme name="scania" global="true"></c-theme>
+      <Header items={this.state.ITEMS} />
+      <Content items={this.state.ITEMS} />
+      <Footer />
+    </Router>
+    )
+  }
+}
+
+ReactDOM.render(<App/>, document.body);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
