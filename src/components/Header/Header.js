@@ -6,7 +6,7 @@ import data from './../../../package.json';
 
 import './Header.scss';
 
-import { defineCustomElements } from 'corporate-ui-dev/dist';
+import { defineCustomElements } from 'corporate-ui-dev';
 
 defineCustomElements(['c-header', 'c-navigation']);
 

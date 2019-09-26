@@ -13,11 +13,10 @@ import Footer from './components/Footer/Footer';
 // Components
 import Home from './scenes/Home/Home';
 import Info from './scenes/Info/Info';
-import Contact from './scenes/Contact/Contact';
 
 import * as serviceWorker from './serviceWorker';
 
-import { defineCustomElements, addTheme } from 'corporate-ui-dev/dist';
+import { defineCustomElements, addTheme } from 'corporate-ui-dev';
 import { theme as scania } from 'scania-theme';
 
 defineCustomElements(['c-container', 'c-theme']);
@@ -41,8 +40,6 @@ class App extends Component {
             { name: 'Form', url:'/form', ctrl: Info, type : 'primary' }
           ]
         },
-        { name: 'Contact', url: '/contact', ctrl: Contact, type : 'primary'},
-        { name: 'More', url: '/more', type : 'secondary' },
       ]
     })
   }
