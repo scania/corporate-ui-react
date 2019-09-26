@@ -1,6 +1,6 @@
 # Corporate UI in a React application
 
-## Quick setup
+## Run project locally
 
 1. Clone the project
 2. Run `npm i` to install package dependencies
