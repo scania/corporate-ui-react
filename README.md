@@ -33,11 +33,13 @@ To include Corporate UI components in React application, follow these steps:
 3. Import and use `theme` from scania-theme package
 
 4.  Use `c-theme` component in the template
-   <br>`<c-theme name="scania" global="true"></c-theme>`
-   <br>If the `global` attribute set to true, it will add bootstrap 4 styling classes & javascript.
+
+   ```<c-theme name="scania" global="true"></c-theme>```
+   
+   If the `global` attribute set to true, it will add bootstrap 4 styling classes & javascript.
    
 
-The code in `index.js` below that will load `c-theme, c-footer, and c-header`. For all available components, check [this link](https://static.scania.com/build/global/4.0.0-alpha.1/www/index.html). To import all components, pass an 'all' string instead.
+The code in `index.js` below will load `c-theme, c-footer, and c-header`. For all available components, check [this link](https://static.scania.com/build/global/4.0.0-alpha.1/www/index.html). To import all components, pass an 'all' string instead.
 
 ```js
 import React from 'react';
