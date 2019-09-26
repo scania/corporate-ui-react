@@ -1,5 +1,9 @@
 # Corporate UI in a React application
 
+## Live example
+
+See the running example on [this link](https://scania.github.io/corporate-ui-react/).
+
 ## Getting started
 
 1. Clone the project
@@ -75,9 +79,3 @@ To be able to have Scania sticky footer, set the root selector to the html body.
 ```
 ReactDOM.render(App, document.body);
 ```
-
-
-## Live example
-
-See the running example on [this link](https://scania.github.io/corporate-ui-react/).
-
