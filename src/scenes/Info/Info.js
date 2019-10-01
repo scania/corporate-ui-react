@@ -52,20 +52,19 @@ function DetailInfo( {match} ) {
 }
 
 class Info extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <section>
         <div className="container-fluid">
           <h1>Info</h1>
           <h4>{this.props.match.params.id}</h4>
-          <div className="col-md-4">
-            <Switch>
-              <Route path={'/info/'+this.props.match.params.id} component={DetailInfo} />
-              <Redirect from="/info" to="/info/list" />
-            </Switch>
+          <div className="row">
+            <div className="col-md-4">
+              <Switch>
+                <Route path={'/info/'+this.props.match.params.id} component={DetailInfo} />
+                <Redirect from="/info" to="/info/list" />
+              </Switch>
+            </div>
           </div>
         </div>
       </section>

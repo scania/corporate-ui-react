@@ -1,57 +1,34 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-
-import data from '../package.json';
-import './index.scss';
-
-// Scenes
-import Header from './components/Header/Header';
-import Content from './components/Content/Content';
-import Footer from './components/Footer/Footer';
-
-// Components
-import Home from './scenes/Home/Home';
-import Info from './scenes/Info/Info';
-
-import * as serviceWorker from './serviceWorker';
-
 import { defineCustomElements, addTheme } from 'corporate-ui-dev';
 import { theme as scania } from 'scania-theme';
 
-defineCustomElements(['c-container', 'c-theme']);
+import * as serviceWorker from './serviceWorker';
+import data from '../package.json';
+
+import Header from './components/Header/Header';
+import Navigation from './components/Navigation/Navigation';
+import Content from './components/Content/Content';
+import Footer from './components/Footer/Footer';
+
+// CSS
+import './index.scss';
+
+defineCustomElements(['c-theme', 'c-header', 'c-navigation', 'c-content', 'c-footer']);
 addTheme(scania);
 
+// TODO: Remove constructor and didMount and change to routes instead of items
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {ITEMS:[]}
-  }
-
-  componentDidMount() {
-    this.setState({
-      ITEMS: [
-        { name: 'Home', url: '/', ctrl: Home, attrs: { exact: true }, type : 'primary' },
-        { 
-          name: 'Info', url: '/info', ctrl: Info, type : 'primary',
-          children: [
-            { name: 'List', url:'/list', ctrl: Info, type : 'primary' },
-            { name: 'Table', url:'/table', ctrl: Info, type : 'primary' },
-            { name: 'Form', url:'/form', ctrl: Info, type : 'primary' }
-          ]
-        },
-      ]
-    })
-  }
-
   render () {
     return (
-    <Router basename={data.name}>
-      <c-theme name="scania" global="true"></c-theme>
-      <Header items={this.state.ITEMS} />
-      <Content items={this.state.ITEMS} />
-      <Footer />
-    </Router>
+      <Router basename={data.name}>
+        <c-theme name="scania" global="true"></c-theme>
+        <Header />
+        <Navigation />
+        <Content />
+        <Footer />
+      </Router>
     )
   }
 }
