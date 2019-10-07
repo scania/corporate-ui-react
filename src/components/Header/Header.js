@@ -85,7 +85,7 @@ class Header extends Component {
       )}
 
       <UncontrolledDropdown setActiveFromChild slot="secondary-items">
-        <DropdownToggle tag="a" className="nav-item nav-link" caret>
+        <DropdownToggle tag="a" className="nav-item" caret>
           User
         </DropdownToggle>
         <DropdownMenu right={true}>
