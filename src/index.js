@@ -19,7 +19,7 @@ import * as serviceWorker from './serviceWorker';
 import { defineCustomElements, addTheme } from 'corporate-ui-dev';
 import { theme as scania } from 'scania-theme';
 
-defineCustomElements(['c-container', 'c-theme']);
+defineCustomElements(['c-theme']);
 addTheme(scania);
 
 class App extends Component {
