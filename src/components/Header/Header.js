@@ -6,10 +6,6 @@ import data from './../../../package.json';
 
 import './Header.scss';
 
-import { defineCustomElements } from 'corporate-ui-dev';
-
-defineCustomElements(['c-header', 'c-navigation']);
-
 const Subnav = (props) => {
   if(props.item && props.item.children) {
     return  (
