@@ -43,7 +43,7 @@ To include Corporate UI components in React application, follow these steps:
    If the `global` attribute set to true, it will add bootstrap 4 styling classes & javascript.
    
 
-The code in `index.js` below will load `c-theme, c-footer, and c-header`. For all available components, check [this link](https://static.scania.com/build/global/4.0.0-alpha.1/www/index.html). To import all components, pass an 'all' string instead.
+For all available components, check [this link](https://scania.github.io/corporate-ui-site/).
 
 ```js
 import React from 'react';
@@ -51,10 +51,8 @@ import React from 'react';
 import { defineCustomElements, addTheme } from 'corporate-ui-dev';
 import { theme as scania } from 'scania-theme'; 
 
-defineCustomElements(['c-theme','c-header','c-footer']);
+defineCustomElements();
 addTheme(scania);
-// to import all components pass an 'all' value
-// defineCustomElements('all');
 
 const App = (
   <Router>
