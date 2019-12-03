@@ -3,10 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 
 import Error from '../../scenes/Error/Error';
 
-import { defineCustomElements } from 'corporate-ui-dev';
-
-defineCustomElements(['c-content']);
-
 class Content extends Component {
   render() {
     return (

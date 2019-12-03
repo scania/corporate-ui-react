@@ -16,11 +16,12 @@ import Info from './scenes/Info/Info';
 
 import * as serviceWorker from './serviceWorker';
 
-import { defineCustomElements, addTheme } from 'corporate-ui-dev';
+import { addTheme, defineCustomElements } from 'corporate-ui-dev'
 import { theme as scania } from 'scania-theme';
 
-defineCustomElements(['c-theme']);
+defineCustomElements();
 addTheme(scania);
+
 
 class App extends Component {
   constructor(props) {
