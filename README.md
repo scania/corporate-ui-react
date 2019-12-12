@@ -25,14 +25,14 @@ See the running example on [this link](https://scania.github.io/corporate-ui-rea
 
 To include Corporate UI components in React application, follow these steps:
 
-1. Install corporate-ui  and scania-theme package
+1. Install corporate-ui and scania-theme package
 
    ```
-   npm i corporate-ui-dev
+   npm i corporate-ui
    npm i scania-theme
    ```
 
-2. Import and use `defineCustomElements` and `addTheme` from corporate-ui-dev package
+2. Import and use `defineCustomElements` and `addTheme` from corporate-ui package
 
 3. Import and use `theme` from scania-theme package
 
@@ -48,7 +48,7 @@ For all available components, check [this link](https://scania.github.io/corpora
 ```js
 import React from 'react';
 
-import { defineCustomElements, addTheme } from 'corporate-ui-dev';
+import { defineCustomElements, addTheme } from 'corporate-ui';
 import { theme as scania } from 'scania-theme'; 
 
 defineCustomElements();
