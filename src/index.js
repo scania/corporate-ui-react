@@ -16,7 +16,7 @@ import Info from './scenes/Info/Info';
 
 import * as serviceWorker from './serviceWorker';
 
-import { addTheme, defineCustomElements } from 'corporate-ui-dev'
+import { addTheme, defineCustomElements } from 'corporate-ui'
 import { theme as scania } from 'scania-theme';
 
 defineCustomElements();
