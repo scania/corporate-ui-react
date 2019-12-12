@@ -32,6 +32,6 @@
   ],
   "devDependencies": {
     "scania-theme": "1.0.0-beta.1",
-    "corporate-ui-dev": "4.0.0-beta.4"
+    "corporate-ui-dev": "4.0.0-gamma.2"
   }
 }
