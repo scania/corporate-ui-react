@@ -1,6 +1,9 @@
+import "babel-polyfill";
+
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+
 
 import data from '../package.json';
 import './index.scss';
@@ -26,22 +29,28 @@ addTheme(scania);
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {ITEMS:[]}
+
+    this.state = { ITEMS: { children: [] } }
   }
 
   componentDidMount() {
     this.setState({
-      ITEMS: [
-        { name: 'Home', url: '/', ctrl: Home, attrs: { exact: true }, type : 'primary' },
-        { 
-          name: 'Info', url: '/info', ctrl: Info, type : 'primary',
-          children: [
-            { name: 'List', url:'/list', ctrl: Info, type : 'primary' },
-            { name: 'Table', url:'/table', ctrl: Info, type : 'primary' },
-            { name: 'Form', url:'/form', ctrl: Info, type : 'primary' }
-          ]
-        },
-      ]
+      ITEMS: {
+        url: '/',
+        children: [
+          {
+            name: 'Home', url: '/home', ctrl: Home, type : 'primary'
+          },
+          {
+            name: 'Info', url: '/info', ctrl: Info, type : 'primary',
+            children: [
+              { name: 'List', url: '/list', ctrl: Info, type : 'primary' },
+              { name: 'Table', url: '/table', ctrl: Info, type : 'primary' },
+              { name: 'Form', url: '/form', ctrl: Info, type : 'primary' }
+            ]
+          },
+        ]
+      }
     })
   }
 

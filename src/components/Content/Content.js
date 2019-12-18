@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Error from '../../scenes/Error/Error';
 
@@ -8,11 +8,11 @@ class Content extends Component {
     return (
       <c-content>
         <Switch>
-          {this.props.items.map((item, key) => [
-              <Route exact path={item.url} component={item.ctrl} key={key} {...item.attrs}/>,
-              <Route path={item.url +'/:id'} component={item.ctrl} key={key} /> 
-            ]
-          )}
+          <Redirect exact from="/" to="/info" />
+          {this.props.items.children.map((item, key) => [
+            <Route component={item.ctrl} key={key} path={item.url} exact />,
+            <Route component={item.ctrl} key={key} path={item.url +'/:id'} />
+          ])}
           <Route component={Error} />
         </Switch>
       </c-content>

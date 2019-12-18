@@ -1,12 +1,11 @@
 {
   "name": "corporate-ui-react",
   "version": "0.1.0",
-  "private": true,
   "homepage": "https://scania.github.io/corporate-ui-react",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-router-dom": "^5.0.0",
@@ -32,6 +31,7 @@
   ],
   "devDependencies": {
     "corporate-ui": "4.0.0",
-    "scania-theme": "1.0.0-0"
+    "scania-theme": "1.0.0-0",
+    "babel-polyfill": "6.26.0"
   }
 }
