@@ -46,11 +46,11 @@ class Header extends Component {
       dropdownOpen: !prevState.dropdownOpen
     }));
   }
-  
+
   matchUrl = (match, location) => {
     const activeSegment = location.pathname.match(/^\/+\w*/gm);
     if(match) {
-      this.onLoadActive = this.props.items.find(item => {
+      this.onLoadActive = (this.props.items.children || []).find(item => {
         return item.url === activeSegment[0];
       })
     }
@@ -62,36 +62,38 @@ class Header extends Component {
   }
 
   render() {
+    console.log(this.props.items)
     return [
-      <c-header site-name="App">
+      <c-header site-name="App" key="1">
         <NavLink to="/global" slot="items">global</NavLink>
       </c-header>,
-      <c-navigation>
-      {this.props.items.map((item, key) => 
-        <NavLink 
-          activeClassName="active"
-          to={item.url}
-          key={key} 
-          className={item.children ? 'parent' : ''}
-          slot= {item.type + '-items'} {...item.attrs}
-          onClick={() => this.setActive(item)}
-          isActive={this.matchUrl}
-          >{item.name}
-        </NavLink> 
-      )}
 
-      <UncontrolledDropdown setActiveFromChild slot="secondary-items">
-        <DropdownToggle tag="a" className="nav-item" caret>
-          User
-        </DropdownToggle>
-        <DropdownMenu right={true}>
-          <DropdownItem tag={NavLink} to="/user/profile">Profile</DropdownItem>
-          <DropdownItem tag={NavLink} to="/user/settings">Settings</DropdownItem>
-        </DropdownMenu>
-      </UncontrolledDropdown>
+      <c-navigation key="2">
+        {(this.props.items.children || []).map((item, key) =>
+          <NavLink
+            activeClassName="active"
+            to={item.url}
+            key={key}
+            className={item.children ? 'parent' : ''}
+            slot={item.type + '-items'}
+            onClick={() => this.setActive(item)}
+            isActive={this.matchUrl}
+            {...item.attrs}
+            >{item.name}
+          </NavLink>
+        )}
 
-      <Subnav item={ this.state.active } ctrl={Content}/>
-    </c-navigation>
+        <UncontrolledDropdown setActiveFromChild slot="secondary-items">
+          <DropdownToggle tag="a" className="nav-item" caret>User</DropdownToggle>
+
+          <DropdownMenu right={true}>
+            <DropdownItem tag={NavLink} to="/user/profile">Profile</DropdownItem>
+            <DropdownItem tag={NavLink} to="/user/settings">Settings</DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown>
+
+        <Subnav item={ this.state.active } ctrl={Content}/>
+      </c-navigation>
     ];
   }
 }
