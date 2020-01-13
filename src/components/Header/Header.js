@@ -62,7 +62,7 @@ class Header extends Component {
   }
 
   render() {
-    console.log(this.props.items)
+    // console.log(this.props.items)
     return [
       <c-header site-name="App" key="1">
         <NavLink to="/global" slot="items">global</NavLink>
