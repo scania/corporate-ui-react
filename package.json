@@ -31,7 +31,7 @@
   ],
   "devDependencies": {
     "corporate-ui": "4.0.3",
-    "scania-theme": "1.0.2",
+    "scania-theme": "1.1.0",
     "babel-polyfill": "6.26.0"
   }
 }
