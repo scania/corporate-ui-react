@@ -30,7 +30,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "corporate-ui": "4.0.3",
+    "corporate-ui": "4.1.1",
     "scania-theme": "1.0.2",
     "babel-polyfill": "6.26.0"
   }
