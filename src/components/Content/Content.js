@@ -8,7 +8,7 @@ class Content extends Component {
     return (
       <c-content>
         <Switch>
-          <Redirect exact from="/" to="/info" />
+          <Redirect exact from="/" to="/home" />
           {this.props.items.children.map((item, key) => [
             <Route component={item.ctrl} key={key} path={item.url} exact />,
             <Route component={item.ctrl} key={key} path={item.url +'/:id'} />
