@@ -14,7 +14,7 @@ npm start
 
 ## Scania Digital Design System
 
-Visit our Design System at [Digital.design.scania.com](https://digitaldesign.scania.com/) for more information
+Visit our Design System at [Digitaldesign.scania.com](https://digitaldesign.scania.com/) for more information
 
 For more information about how to use Corporate-Ui and Scania-Theme go to [digtal.design.scania.com/getting-started](https://digitaldesign.scania.com/getting-started/development)
 
